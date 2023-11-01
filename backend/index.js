@@ -14,14 +14,12 @@ app.use(cors(
 )) 
 
 
-app.use((req, res, next) => { 
-  res.setHeader("Access-Control-Allow-Origin", "https://food4u-app.vercel.app");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
+app.use((req, res, next) => {
+  res.setHeader('Access-Control-Allow-Origin', 'https://food4u-app.vercel.app');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
-})
+});
 
 app.get('/', (req, res) => { 
   res.send('Hello World!')

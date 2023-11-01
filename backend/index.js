@@ -7,7 +7,7 @@ mongoDB();
 
 app.use(cors(
   {
-    origin: [""],
+    origin: ["https://food4u-app.vercel.app"],
     methods: ["POST", "GET"],
     Credentials: true
   }

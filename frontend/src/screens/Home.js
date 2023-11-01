@@ -8,7 +8,7 @@ export default function Home() {
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
   const loadFoodItems = async () => {
-    let response = await fetch("https://food4u-api.vercel.app/api/foodData", {
+    let response = await fetch("https://food4u-app-api.vercel.app/api/foodData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',

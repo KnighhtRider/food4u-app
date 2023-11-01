@@ -2,8 +2,8 @@
 
 import React, { useState } from 'react'
 import { Link, useNavigate } from "react-router-dom";
-import Badge from '@mui/icons-material/Badge';
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import { Badge } from '@mui/material/Badge';
+import ShoppingCart from '@mui/icons-material/ShoppingCart';
 import { useCart } from './ContextReducer';
 import Modal from '../Modal';
 import Cart from '../screens/Cart';
@@ -51,7 +51,7 @@ export default function Navbar(props) {
 
                 <div className="btn bg-white text-success mx-2 " onClick={loadCart}>
                   <Badge color="secondary" badgeContent={items.length} >
-                    <ShoppingCartIcon />
+                    <ShoppingCart />
                   </Badge>
                   Cart
                 </div>

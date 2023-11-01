@@ -5,21 +5,15 @@ const port = 5000
 const mongoDB = require('./db'); 
 mongoDB(); 
 
-// app.use(cors(
-//   {
-//     origin: ["https://food4u-app.vercel.app"],
-//     methods: ["POST", "GET"],
-//     Credentials: true
-//   }
-// )) 
+app.use(cors(
+ {
+     origin: ["https://food4u-app.vercel.app"],
+     methods: ["POST", "GET"],
+    Credentials: true
+ }
+ )) 
 
 
-app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'https://food4u-app.vercel.app');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  next();
-});
 
 app.get('/', (req, res) => { 
   res.send('Hello World!')

@@ -5,13 +5,13 @@ const port = 5000
 const mongoDB = require('./db'); 
 mongoDB(); 
 
-app.use(cors(
-  {
-    origin: ["https://food4u-app.vercel.app"],
-    methods: ["POST", "GET"],
-    Credentials: true
-  }
-)) 
+// app.use(cors(
+//   {
+//     origin: ["https://food4u-app.vercel.app"],
+//     methods: ["POST", "GET"],
+//     Credentials: true
+//   }
+// )) 
 
 
 app.use((req, res, next) => {

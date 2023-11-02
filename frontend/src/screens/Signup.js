@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 
 function Signup() {
 
-  let navigate = useNavigate()
+  let navigate = useNavigate() 
 
   const [credentials, setcredentials] = useState({
     name: "",
@@ -19,7 +19,7 @@ function Signup() {
     console.log(JSON.stringify({name:credentials.name, email:credentials.email, password:credentials.password,location:credentials.geolocation}))
     const response = await fetch("https://food4u-api.vercel.app/api/createuser", {
       method: "POST",
-      mode: 'cors',
+      mode: 'no-cors',
       headers: {
         "Content-Type": "application/json",
       },

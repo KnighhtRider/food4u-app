@@ -12,7 +12,7 @@ export default function MyOrder() {
             // credentials: 'include',
             // Origin:"http://localhost:3000/login",
             method: 'POST',
-            mode: 'cors',
+            mode: 'no-cors',
             headers: {
                 'Content-Type': 'application/json'
             },

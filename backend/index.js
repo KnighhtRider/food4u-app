@@ -19,7 +19,7 @@ app.use(cors({
     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
     credentials: true,
     preflightContinue: false,
-  optionsSuccessStatus: 204,
+    optionsSuccessStatus: 204,
 }))
 
 

@@ -7,21 +7,27 @@ mongoDB();
 
 app.use(cors(
   {
-    origin: [""],
-    methods: ["POST", "GET"],
+    origin: ["https://food4u-app.vercel.app"],
+    methods: ["POST", "GET", "UPDATE", "DELETE"],
     Credentials: true
   }
 )) 
 
+app.use(cors({
+    origin: 'https://food4u-app.vercel.app', // use your actual domain name (or localhost), using * is not recommended
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+    credentials: true
+}))
 
-app.use((req, res, next) => { 
-  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept"
-  );
-  next();
-})
+// app.use((req, res, next) => { 
+//   res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
+//   res.header(
+//     "Access-Control-Allow-Headers",
+//     "Origin, X-Requested-With, Content-Type, Accept"
+//   );
+//   next();
+// })
 
 app.get('/', (req, res) => { 
   res.send('Hello World!')

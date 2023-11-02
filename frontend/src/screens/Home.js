@@ -8,7 +8,7 @@ export default function Home() {
   const [foodItems, setFoodItems] = useState([])
   const [search, setSearch] = useState('')
   const loadFoodItems = async () => {
-    let response = await fetch("https://food4u-app-api.vercel.app/api/foodData", {
+    let response = await fetch("http://localhost:5000/api/foodData", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
@@ -16,7 +16,7 @@ export default function Home() {
         'Content-Type': 'application/json'
       }
 
-    });
+    }); 
     response = await response.json()
     // console.log(response[1][0].CategoryName)
     setFoodItems(response[0])
@@ -70,7 +70,7 @@ export default function Home() {
               return (
                 // justify-content-center
                 <div className='row mb-3'>
-                  <div key={data.id} className='fs-3 m-3'>
+                  <div key={data._id} className='fs-3 m-3'>
                     {data.CategoryName}
                   </div>
                   <hr id="hr-success" style={{ height: "4px", backgroundImage: "-webkit-linear-gradient(left,rgb(0, 255, 137),rgb(0, 0, 0))" }} />
@@ -78,7 +78,7 @@ export default function Home() {
                     (items) => (items.CategoryName === data.CategoryName) && (items.name.toLowerCase().includes(search.toLowerCase())))
                     .map(filterItems => {
                       return (
-                        <div key={filterItems.id} className='col-12 col-md-6 col-lg-3 mt-2'> 
+                        <div key={filterItems._id} className='col-12 col-md-6 col-lg-3 mt-2'> 
                           {console.log(filterItems.url)}
                           <Card foodName={filterItems.name} item={filterItems} options={filterItems.options[0]} ImgSrc={filterItems.img} ></Card>
                         </div>

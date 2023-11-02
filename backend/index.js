@@ -13,12 +13,12 @@ mongoDB();
 //   }
 // )) 
 
-app.use(cors({
-    origin: 'https://food4u-app.vercel.app', // use your actual domain name (or localhost), using * is not recommended
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
-    allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
-    credentials: true
-}))
+// app.use(cors({
+//     origin: 'https://food4u-app.vercel.app', // use your actual domain name (or localhost), using * is not recommended
+//     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'HEAD', 'OPTIONS'],
+//     allowedHeaders: ['Content-Type', 'Origin', 'X-Requested-With', 'Accept', 'x-client-key', 'x-client-token', 'x-client-secret', 'Authorization'],
+//     credentials: true
+// }))
 
 app.use((req, res, next) => { 
   res.setHeader("Access-Control-Allow-Origin", "https://food4u-app.vercel.app");

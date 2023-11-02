@@ -19,6 +19,7 @@ function Signup() {
     console.log(JSON.stringify({name:credentials.name, email:credentials.email, password:credentials.password,location:credentials.geolocation}))
     const response = await fetch("https://food4u-api.vercel.app/api/createuser", {
       method: "POST",
+      mode: 'cors',
       headers: {
         "Content-Type": "application/json",
       },

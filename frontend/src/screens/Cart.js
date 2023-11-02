@@ -18,6 +18,7 @@ export default function Cart() {
     let userEmail = localStorage.getItem("userEmail");
     let response = await fetch("https://food4u-api.vercel.app/api/orderData", {
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       },

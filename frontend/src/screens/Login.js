@@ -11,6 +11,7 @@ export default function Login() {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       method: 'POST',
+      mode: 'cors',
       headers: {
         'Content-Type': 'application/json'
       },
